@@ -18,13 +18,13 @@ namespace CakeShop.Controllers.Api
         }
 
         //GET /api/categories
-        public IEnumerable<Category> GetCategories()
+        public IEnumerable<Cart> GetCategories()
         {
             return _context.Categories.ToList();
         }
 
         //GET /api/categories/1
-        public Category GetCategory(int id)
+        public Cart GetCategory(int id)
         {
             var category = _context.Categories.SingleOrDefault(c => c.Id == id);
 
@@ -36,7 +36,7 @@ namespace CakeShop.Controllers.Api
 
         //POST /api/categories
         [HttpPost]
-        public Category CreateCategory(Category category)
+        public Cart CreateCategory(Cart category)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
@@ -49,7 +49,7 @@ namespace CakeShop.Controllers.Api
 
         //PUT /api/categories/1
         [HttpPut]
-        public void UpdateCategory(int id,Category category)
+        public void UpdateCategory(int id,Cart category)
         {
             if (!ModelState.IsValid)
                 throw new HttpResponseException(HttpStatusCode.BadRequest);

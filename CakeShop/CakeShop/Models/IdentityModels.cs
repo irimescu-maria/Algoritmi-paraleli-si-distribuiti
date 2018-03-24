@@ -21,9 +21,10 @@ namespace CakeShop.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Cake> Cakes { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<Cart> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Cart> Carts { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

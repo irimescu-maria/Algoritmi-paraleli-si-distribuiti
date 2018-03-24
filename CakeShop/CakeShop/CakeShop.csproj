@@ -201,7 +201,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\CakesController.cs" />
+    <Compile Include="Controllers\Api\CartsController.cs" />
     <Compile Include="Controllers\Api\CategoriesController.cs" />
+    <Compile Include="Controllers\Api\OrderDetailsController.cs" />
     <Compile Include="Controllers\Api\OrdersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />

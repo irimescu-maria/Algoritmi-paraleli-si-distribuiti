@@ -2,7 +2,7 @@
 
 namespace CakeShop.Models
 {
-    public class Category
+    public class Cart
     {
         public int Id { get; set; }
 

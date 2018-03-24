@@ -15,7 +15,7 @@ namespace CakeShop.Models
         public string ImagePath { get; set; }
 
         //Navigation properties
-        public Category Category { get; set; }
+        public Cart Category { get; set; }
 
         public int CategoryId { get; set; }
     }
