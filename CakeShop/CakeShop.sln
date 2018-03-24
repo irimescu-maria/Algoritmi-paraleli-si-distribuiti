@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeShop", "CakeShop\CakeShop.csproj", "{5C97DA26-C4D5-4476-A187-5E2AE9C867F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeShop", "CakeShop\CakeShop.csproj", "{E28236E2-7D6A-4DCF-9FCE-027F11972B9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5C97DA26-C4D5-4476-A187-5E2AE9C867F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C97DA26-C4D5-4476-A187-5E2AE9C867F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C97DA26-C4D5-4476-A187-5E2AE9C867F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C97DA26-C4D5-4476-A187-5E2AE9C867F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E28236E2-7D6A-4DCF-9FCE-027F11972B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E28236E2-7D6A-4DCF-9FCE-027F11972B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E28236E2-7D6A-4DCF-9FCE-027F11972B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E28236E2-7D6A-4DCF-9FCE-027F11972B9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D921DBA1-C301-4825-BE1A-62E3363983FC}
+		SolutionGuid = {D0F91AED-4E05-4A4E-8362-93491E082970}
 	EndGlobalSection
 EndGlobal
