@@ -4,7 +4,7 @@ namespace CakeShop.Models
 {
     public class Category
     {
-        public byte Id { get; set; }
+        public int Id { get; set; }
 
  
         public string Nume { get; set; }

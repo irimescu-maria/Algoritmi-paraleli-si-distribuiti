@@ -1,40 +1,51 @@
-CREATE TABLE Cake(
+CREATE TABLE Cakes(
 	Id INT IDENTITY(1,1) NOT NULL,
 	Name NVARCHAR(50) NOT NULL,
 	Description NVARCHAR(255) NOT NULL,
 	Price DECIMAL(18,2) NOT NULL,
 	AvailableQuantity INT NOT NULL,
 	ImagePath NVARCHAR(MAX) NOT NULL,
-	CategoryId INT NOT NULL,
-)
+	CategoryId INT NOT NULL
+)  
+GO
+drop table Cakes
+drop table Categories
+drop table Carts
+drop table Orders
+drop table OrderDetails
+
+ALTER TABLE Cakes
+			ADD CONSTRAINT [Cakes_Categories_CategoryId] FOREIGN KEY 
+			([CategoryId]) REFERENCES Categories ([Id]) ON DELETE CASCADE
+
 GO
 
-ALTER TABLE Cake
-	ADD CONSTRAINT PK_Cake PRIMARY KEY CLUSTERED (Id)
+ALTER TABLE Cakes
+	ADD CONSTRAINT PK_Cakes PRIMARY KEY CLUSTERED (Id)
 GO
 
-CREATE TABLE Category(
+CREATE TABLE Categories(
     Id   INT IDENTITY (1, 1) NOT NULL,
     Nume NVARCHAR (255) NOT NULL,
-    CONSTRAINT PK_Category PRIMARY KEY CLUSTERED (Id ASC)
+    CONSTRAINT PK_Categories PRIMARY KEY CLUSTERED (Id ASC)
 )
 GO
 
-CREATE TABLE Cart (
+CREATE TABLE Carts (
     RecordId  INT            IDENTITY (1, 1) NOT NULL,
     CartId    NVARCHAR (MAX) NULL,
     CakeId    INT            NOT NULL,
     Cantitate INT            NOT NULL,
-    CONSTRAINT PK_Cart PRIMARY KEY CLUSTERED ([RecordId] ASC),
-    CONSTRAINT FK_Carts_Cake_CakeId FOREIGN KEY ([CakeId]) REFERENCES Cake ([Id]) ON DELETE CASCADE
+    CONSTRAINT PK_Carts PRIMARY KEY CLUSTERED ([RecordId] ASC),
+    CONSTRAINT FK_Carts_Cakes_CakeId FOREIGN KEY ([CakeId]) REFERENCES Cakes ([Id]) ON DELETE CASCADE
 )
 GO
 
 CREATE NONCLUSTERED INDEX [IX_CakeId]
-    ON Cart([CakeId] ASC);
+    ON Carts([CakeId] ASC);
 GO
 
-CREATE TABLE [Order](
+CREATE TABLE Orders(
     [Id]         INT             IDENTITY (1, 1) NOT NULL,
     [Username]   NVARCHAR (MAX)  NULL,
     [FirstName]  NVARCHAR (160)  NOT NULL,
@@ -47,28 +58,30 @@ CREATE TABLE [Order](
     [OrderDate]  DATETIME        NOT NULL,
     [City]       NVARCHAR (40)   DEFAULT ('') NOT NULL,
     [County]      NVARCHAR (40)   DEFAULT ('') NOT NULL,
-    CONSTRAINT [PK_Order] PRIMARY KEY CLUSTERED ([Id] ASC)
+    CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED ([Id] ASC)
 )
 GO
 
-CREATE TABLE OrderDetail (
+CREATE TABLE OrderDetails (
     [Id]        INT             IDENTITY (1, 1) NOT NULL,
     [OrderId]   INT             NOT NULL,
     [CakeId]    INT             NOT NULL,
     [Quantity]  INT             NOT NULL,
     [UnitPrice] DECIMAL (18, 2) NOT NULL,
-    CONSTRAINT [PK_OrderDetail] PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [FK_OrderDetail.Cake_CakeId] FOREIGN KEY ([CakeId]) REFERENCES [Cake] ([Id]) ON DELETE CASCADE,
-    CONSTRAINT [FK_OrderDetail_Order_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Order] ([Id]) ON DELETE CASCADE
+    CONSTRAINT [PK_OrderDetails] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_OrderDetails.Cakes_CakeId] FOREIGN KEY ([CakeId]) REFERENCES [Cakes] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_OrderDetails_Orders_OrderId] FOREIGN KEY ([OrderId]) REFERENCES [Orders] ([Id]) ON DELETE CASCADE
 )
 GO
 
 
 CREATE NONCLUSTERED INDEX [IX_OrderId]
-    ON [OrderDetail]([OrderId] ASC);
+    ON [OrderDetails]([OrderId] ASC);
 GO
 
 CREATE NONCLUSTERED INDEX [IX_CakeId]
-    ON [OrderDetail]([CakeId] ASC);
+    ON [OrderDetails]([CakeId] ASC);
+
+
 
 

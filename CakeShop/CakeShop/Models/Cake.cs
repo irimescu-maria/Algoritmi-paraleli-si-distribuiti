@@ -17,6 +17,6 @@ namespace CakeShop.Models
         //Navigation properties
         public Category Category { get; set; }
 
-        public byte CategoryId { get; set; }
+        public int CategoryId { get; set; }
     }
 }
