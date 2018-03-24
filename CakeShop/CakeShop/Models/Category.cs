@@ -10,6 +10,6 @@ namespace CakeShop.Models
         public string Nume { get; set; }
 
     
-        public List<Cake> Cakes { get; set; }
+        public virtual List<Cake> Cakes { get; set; }
     }
 }
